@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-print("OpenAI API Key:", os.environ["REACT_APP_OPENAI_API_KEY"])
+print("OpenAI API Key:", os.environ["OPENAI_API_KEY"])
 
 import os
 import openai
@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 # Load environment variables from .env file
 load_dotenv()
-openai.api_key = os.environ["REACT_APP_OPENAI_API_KEY"]
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 @app.route("/")
 def index():
