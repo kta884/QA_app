@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-print("OpenAI API Key:", os.environ["OPENAI_API_KEY"])
+print("OpenAI API Key:", os.environ["REACT_APP_OPENAI_API_KEY"])
 
 import os
 import openai
@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 # Load environment variables from .env file
 load_dotenv()
-openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = os.environ["REACT_APP_OPENAI_API_KEY"]
 
 @app.route("/")
 def index():
@@ -27,8 +27,8 @@ def answer():
 
     response = openai.Completion.create(
         engine="text-davinci-002",
-        prompt=f"この質問に日本語で答えてください: {question}",
-        max_tokens=50,
+        prompt=f"この質問に日本語で答えてください。: {question}",
+        max_tokens=2000,
         n=1,
         stop=None,
         temperature=0.5,
