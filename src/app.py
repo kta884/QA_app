@@ -1,12 +1,6 @@
 import os
 from dotenv import load_dotenv
-
-load_dotenv()
-print("OpenAI API Key:", os.environ["OPENAI_API_KEY"])
-
-import os
 import openai
-from dotenv import load_dotenv
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
